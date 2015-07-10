@@ -3,7 +3,10 @@ Docker 1.7.1 Fork for Raspberry Pi
 
 ![Docker L](docs/static_files/docker-logo-compressed.png "Docker")
 
-This is a fork of the docker 1.7.1 rc3 build.  The Dockerfile has been modified to compile on a Raspberry Pi2.  Various Pi  package dependencies are required to successfully build.  Hopefully a list of those will make it to this readme in the future
+This is a fork of the docker 1.7.1 rc3 build.  The Dockerfile has been modified to compile on a Raspberry Pi2.  Various Pi  package dependencies are required to successfully build.  Hopefully a list of those will make it to this readme in the future.
+
+The operating system on the Raspberry Pi is from hypriot.  Please visit their site and download the flash utility to get your Pi up and running with docker 1.5.  [Hypriot](https://github.com/hypriot/flash) 
+
 
 Getting started
 ===============
