@@ -5,7 +5,7 @@ Docker 1.7.1 Fork for Raspberry Pi
 
 This is a fork of the docker 1.7.1 rc3 build.  The Dockerfile has been modified to compile on a Raspberry Pi2.  Various Pi  package dependencies are required to successfully build.  Hopefully a list of those will make it to this readme in the future.
 
-The operating system on the Raspberry Pi is from hypriot.  Please visit their site and download the flash utility to get your Pi up and running with docker 1.5.  [Hypriot Flash Tool](https://github.com/hypriot/flash) [HypriotOS used](http://downloads.hypriot.com/hypriot-rpi-20150329-140334.img.zip)
+The operating system on the Raspberry Pi is from Hypriot.  Please visit their site and download the flash utility [Hypriot Flash Tool](https://github.com/hypriot/flash) to get your Pi up and running with [HypriotOS](http://downloads.hypriot.com/hypriot-rpi-20150329-140334.img.zip).  
 
 
 
@@ -83,6 +83,3 @@ system
 Define and run multi-container apps
 * [Kitematic](https://github.com/kitematic/kitematic): The easiest way to use 
 Docker on a Mac
-
-If you know of another project underway that should be listed here, please help 
-us keep this list up-to-date by submitting a PR.
