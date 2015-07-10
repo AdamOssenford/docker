@@ -19,15 +19,35 @@ run the following 2 commands
 #####make build
 #####make binary
 
+after successful build the binary will be located in bundles/1.7.1-rc3/binary/
+
+copy your current docker to .old (cp /usr/bin/docker /usr/bin/docker.old)
+copy the new version in to place cp bundles/1.7.1-rc3/binary/docker-1.7.1-rc3 /usr/bin/docker
+
+check the version
+#####$ docker version
+#####Client version: 1.7.1-rc3
+#####Client API version: 1.19
+#####Go version (client): go1.4.2
+#####OS/Arch (client): linux/arm
+#####Server version: 1.7.1-rc3
+#####Server API version: 1.19
+#####Go version (server): go1.4.2
+#####Git commit (server):
+#####OS/Arch (server): linux/arm
+
+restart the daemon
+#####service docker restart
 Usage examples
 ==============
 
-start the daemon
-
-service docker start
-
 run a container
-docker run -it hypriot/rpi-busybox-httpd
+#####docker run -i -t resin/rpi-raspbian /bin/bash
+
+install nmap in your container
+#####apt-get update && apt-get install nmap -y
+
+use your imagination :)
 
 Contributing to Docker
 ======================
