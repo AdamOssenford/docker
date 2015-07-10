@@ -23,11 +23,10 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-FROM ubuntu:14.04
+FROM resin/rpi-raspbian
 MAINTAINER Tianon Gravi <admwiggin@gmail.com> (@tianon)
 
 RUN	apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net --recv-keys E871F18B51E0147C77796AC81196BA81F6B0FC61
-RUN	echo deb http://ppa.launchpad.net/zfs-native/stable/ubuntu trusty main > /etc/apt/sources.list.d/zfs.list
 
 # Packaged dependencies
 RUN apt-get update && apt-get install -y \
@@ -52,9 +51,7 @@ RUN apt-get update && apt-get install -y \
 	reprepro \
 	ruby1.9.1 \
 	ruby1.9.1-dev \
-	s3cmd=1.1.0* \
-	ubuntu-zfs \
-	libzfs-dev \
+	s3cmd \
 	--no-install-recommends
 
 # Get lvm2 source for compiling statically
@@ -88,18 +85,19 @@ RUN cd /usr/local/go/src && ./make.bash --no-clean 2>&1
 
 # Compile Go for cross compilation
 ENV DOCKER_CROSSPLATFORMS \
-	linux/386 linux/arm \
-	darwin/amd64 darwin/386 \
-	freebsd/amd64 freebsd/386 freebsd/arm \
-	windows/amd64 windows/386
+	linux/arm 
 
 # (set an explicit GOARM of 5 for maximum compatibility)
 ENV GOARM 5
 RUN cd /usr/local/go/src \
 	&& set -x \
-	&& for platform in $DOCKER_CROSSPLATFORMS; do \
-		GOOS=${platform%/*} \
-		GOARCH=${platform##*/} \
+###############################
+# HACK AROUND FOR PROBLEM WITH ONE TYPE
+#	&& for platform in $DOCKER_CROSSPLATFORMS; do \
+#		GOOS=${platform%/*} \
+#		GOARCH=${platform##*/} \
+		GOOS=linux \
+		GOARCH=arm \
 			./make.bash --no-clean 2>&1; \
 	done
 
@@ -118,7 +116,9 @@ RUN git clone https://github.com/golang/tools.git /go/src/golang.org/x/tools \
 	&& go install -v golang.org/x/tools/cmd/vet
 
 # TODO replace FPM with some very minimal debhelper stuff
-RUN gem install --no-rdoc --no-ri fpm --version 1.3.2
+# STOP PINNING YOUR VERSIONS PLEAZ
+# INSTALLED OUTSIDE OF THIS FILE WITH gem install fpm
+#RUN gem install --no-rdoc --no-ri fpm 
 
 # Install registry
 ENV REGISTRY_COMMIT d957768537c5af40e4f4cd96871f7b2bde9e2923
