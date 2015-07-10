@@ -11,8 +11,9 @@ Getting started
 clone the repo and change into the new directory
 
 run the following 2 commands
-make build
-make binary
+
+#####make build
+#####make binary
 
 Usage examples
 ==============
