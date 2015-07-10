@@ -1,5 +1,6 @@
+# THIS IS A HACKED UP DOCKER FILE USED TO BUILD 1.7.1rc3 ON RASPBERRY PI2
 # This file describes the standard way to build Docker, using docker
-#
+# 
 # Usage:
 #
 # # Assemble the full dev environment. This is slow the first time.
