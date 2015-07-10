@@ -37,20 +37,6 @@ started contributing code or documentation.](https://docs.docker.com/project/who
 These instructions are probably not perfect, please let us know if anything
 feels wrong or incomplete. Better yet, submit a PR and improve them yourself.
 
-### Legal
-
-*Brought to you courtesy of our legal counsel. For more context,
-please see the [NOTICE](https://github.com/docker/docker/blob/master/NOTICE) document in this repo.*
-
-Use and transfer of Docker may be subject to certain restrictions by the
-United States and other governments.
-
-It is your responsibility to ensure that your use and/or transfer does not
-violate applicable laws.
-
-For more information, please see https://www.bis.doc.gov
-
-
 Licensing
 =========
 Docker is licensed under the Apache License, Version 2.0. See
