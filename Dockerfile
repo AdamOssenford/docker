@@ -25,7 +25,10 @@
 #
 
 FROM resin/rpi-raspbian
-MAINTAINER Tianon Gravi <admwiggin@gmail.com> (@tianon)
+# PUT MYSELF IN AS THE MAINTAINER FOR THIS DOCKER FILE
+MAINTAINER Adam Ossenford <AdamOssenford@gmail.com> 
+# OLD MAINTAINER LINE
+#MAINTAINER Tianon Gravi <admwiggin@gmail.com> (@tianon)
 
 RUN	apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net --recv-keys E871F18B51E0147C77796AC81196BA81F6B0FC61
 
